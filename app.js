@@ -22,7 +22,7 @@ const dummyBioText =
 searchButton.addEventListener("click", async (e) => {
   e.preventDefault();
   let data = await populateHTML(getUserFromAPI(userSearchInput.value));
-  userLogin.textContent = data.login;
+  userLogin.textContent = `@${data.login}`;
   userName.textContent = data.name;
   userAvatar.src = data.avatar_url;
   userCreatedAt.textContent = `Joined ${data.created_at}`;
@@ -55,7 +55,7 @@ function populateHTML(data) {
 }
 
 getUserFromAPI("octocat").then((data) => {
-  userLogin.textContent = data.login;
+  userLogin.textContent = `@${data.login}`;
   userName.textContent = data.name;
   userAvatar.src = data.avatar_url;
   userCreatedAt.textContent = `Joined ${data.created_at}`;

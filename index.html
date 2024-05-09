@@ -3,12 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <title>devfinder</title>
   </head>
   <body>
-    <h1>devfinder</h1>
+    <h1>gitfind</h1>
     <!-- add input form here -->
     <div class="card-and-search-wrapper">
       <form>
@@ -18,7 +24,7 @@
           name="user-search"
           id="user-search"
           placeholder="Search Github username..." />
-        <button id="search-button">User Search</button>
+        <button id="search-button">Search</button>
       </form>
       <!-- add user info here -->
       <div id="user-info" class="user-info">
@@ -32,30 +38,45 @@
               width="100" />
           </div>
           <div class="details">
-            <h2 id="user-name">User Info</h2>
-            <h3 id="user-login"></h3>
+            <h2 id="user-name" class="user-name">User Info</h2>
+            <h3 id="user-login" class="user-login"></h3>
             <p id="user-createdAt"></p>
           </div>
         </div>
         <p id="user-bio"></p>
         <div class="user-site-stats">
-          <p>Repositories: <span id="user-repos"></span></p>
-          <p>Followers: <span id="user-followers"></span></p>
-          <p>Following: <span id="user-following"></span></p>
+          <p>Repos <span id="user-repos"></span></p>
+          <p>Followers <span id="user-followers"></span></p>
+          <p>Following <span id="user-following"></span></p>
         </div>
         <div class="user-links">
-          <p id="user-location"></p>
-          <a
-            href=""
-            target="_blank"
-            id="user-twitter"
-            rel="noopener noreferrer"></a>
-          <a
-            href=""
-            target="_blank"
-            id="user-blog"
-            rel="noopener noreferrer"></a>
-          <p id="user-company"></p>
+          <p class="user-location">
+            <i class="fa-solid fa-location-dot"></i>
+            <span id="user-location"></span>
+          </p>
+          <!-- twitter/x link -->
+          <p>
+            <i class="fa-brands fa-twitter"></i
+            ><a
+              href=""
+              target="_blank"
+              id="user-twitter"
+              rel="noopener noreferrer"></a>
+          </p>
+
+          <!-- blog link -->
+          <p>
+            <i class="fa-solid fa-link"></i>
+            <a
+              href=""
+              target="_blank"
+              id="user-blog"
+              rel="noopener noreferrer"></a>
+          </p>
+          <p class="user-company">
+            <i class="fa-solid fa-building"></i>
+            <span id="user-company"></span>
+          </p>
         </div>
       </div>
     </div>
