@@ -10,45 +10,56 @@
   <body>
     <h1>devfinder</h1>
     <!-- add input form here -->
-    <form>
-      <label for="user-search" hidden>Search a user on github</label>
-      <input type="text" name="user-search" id="user-search" />
-      <button id="search-button">User Search</button>
-    </form>
-    <!-- add user info here -->
-    <div id="user-info">
-      <div class="user-heading">
-        <div class="avatar">
-          <img
-            id="user-avatar"
-            src="https://place.dog/300/200"
-            alt="User Avatar"
-            height="100"
-            width="100" />
+    <div class="card-and-search-wrapper">
+      <form>
+        <label for="user-search" hidden>Search a user on github</label>
+        <input
+          type="text"
+          name="user-search"
+          id="user-search"
+          placeholder="Search Github username..." />
+        <button id="search-button">User Search</button>
+      </form>
+      <!-- add user info here -->
+      <div id="user-info" class="user-info">
+        <div class="user-heading">
+          <div class="avatar">
+            <img
+              id="user-avatar"
+              src="https://place.dog/300/200"
+              alt="User Avatar"
+              height="100"
+              width="100" />
+          </div>
+          <div class="details">
+            <h2 id="user-name">User Info</h2>
+            <h3 id="user-login"></h3>
+            <p id="user-createdAt"></p>
+          </div>
         </div>
-        <div class="details">
-          <h2 id="user-name">User Info</h2>
-          <h3 id="user-login"></h3>
-          <p id="user-createdAt"></p>
+        <p id="user-bio"></p>
+        <div class="user-site-stats">
+          <p>Repositories: <span id="user-repos"></span></p>
+          <p>Followers: <span id="user-followers"></span></p>
+          <p>Following: <span id="user-following"></span></p>
         </div>
-      </div>
-      <p id="user-bio"></p>
-      <div class="user-site-stats">
-        <p>Repositories: <span id="user-repos"></span></p>
-        <p>Followers: <span id="user-followers"></span></p>
-        <p>Following: <span id="user-following"></span></p>
-      </div>
-      <div class="user-links">
-        <p id="user-location"></p>
-        <a
-          href=""
-          target="_blank"
-          id="user-twitter"
-          rel="noopener noreferrer"></a>
-        <a href="" target="_blank" id="user-blog" rel="noopener noreferrer"></a>
-        <p id="user-company"></p>
+        <div class="user-links">
+          <p id="user-location"></p>
+          <a
+            href=""
+            target="_blank"
+            id="user-twitter"
+            rel="noopener noreferrer"></a>
+          <a
+            href=""
+            target="_blank"
+            id="user-blog"
+            rel="noopener noreferrer"></a>
+          <p id="user-company"></p>
+        </div>
       </div>
     </div>
+
     <script src="app.js"></script>
   </body>
 </html>

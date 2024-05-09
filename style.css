@@ -8,7 +8,7 @@
 
 :root {
   --primary-color: #1f1a21;
-  --secondary-color: #343a40;
+  --secondary-color: #6f5e76;
   --dark-color: #343a40;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -28,6 +28,16 @@ body {
   color: #333;
   background-color: var(--primary-color);
   color: var(--light-color);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-weight: 900;
+  font-family: monospace;
+  font-size: 2.5rem;
 }
 
 img {
@@ -38,4 +48,78 @@ img {
   object-fit: cover;
 }
 
+form,
+.user-info {
+  background-color: var(--secondary-color);
+  padding: 1em;
+  border-radius: 10px;
+}
+form {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.625rem;
+}
+
+.card-and-search-wrapper {
+  max-width: 30rem;
+  display: grid;
+  gap: 0.9375rem;
+}
+
 /*=====  End of Main styles  ======*/
+
+/*=============================================
+=            Display Styles            =
+=============================================*/
+
+.user-heading {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-site-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #1f1a21;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.user-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.user-info {
+  display: grid;
+  gap: 1.5625rem;
+}
+
+button {
+  background-color: var(--info-color);
+  color: var(--light-color);
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: monospace;
+  text-transform: capitalize;
+}
+
+input::placeholder {
+  font-family: monospace;
+  font-weight: 400;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+/*=====  End of Display Styles  ======*/

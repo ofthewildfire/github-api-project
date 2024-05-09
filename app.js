@@ -15,6 +15,8 @@ const userCreatedAt = document.getElementById("user-createdAt");
 const userTwitter = document.getElementById("user-twitter");
 const userBlog = document.getElementById("user-blog");
 const userCompany = document.getElementById("user-company");
+const dummyBioText =
+  "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime, tempora doloribus! Nobis totam, blanditiis cupiditate assumenda. Quisquam, quos. Quisquam, quos.";
 
 // Search button event listener
 searchButton.addEventListener("click", async (e) => {
@@ -24,7 +26,7 @@ searchButton.addEventListener("click", async (e) => {
   userName.textContent = data.name;
   userAvatar.src = data.avatar_url;
   userCreatedAt.textContent = `Joined ${data.created_at}`;
-  userBio.textContent = data.bio;
+  userBio.textContent = data.bio ? data.bio : dummyBioText;
   userRepos.textContent = data.public_repos;
   userFollowers.textContent = data.followers;
   userFollowing.textContent = data.following;
@@ -39,6 +41,7 @@ searchButton.addEventListener("click", async (e) => {
   userBlog.textContent = data.blog ? data.blog : "Not Available";
   userCompany.textContent = data.company ? data.company : "Not Available";
   console.log(data);
+  userSearchInput.value = "";
 });
 
 async function getUserFromAPI(userName) {
@@ -50,3 +53,24 @@ async function getUserFromAPI(userName) {
 function populateHTML(data) {
   return data;
 }
+
+getUserFromAPI("octocat").then((data) => {
+  userLogin.textContent = data.login;
+  userName.textContent = data.name;
+  userAvatar.src = data.avatar_url;
+  userCreatedAt.textContent = `Joined ${data.created_at}`;
+  userBio.textContent = data.bio ? data.bio : dummyBioText;
+  userRepos.textContent = data.public_repos;
+  userFollowers.textContent = data.followers;
+  userFollowing.textContent = data.following;
+  userLocation.textContent = data.location ? data.location : "Not Available";
+  userTwitter.textContent = data.twitter_username
+    ? data.twitter_username
+    : "Not Available";
+  userTwitter.href = data.twitter_username
+    ? `https://twitter.com/${data.twitter_username}`
+    : "#";
+  userBlog.href = data.blog ? data.blog : "#";
+  userBlog.textContent = data.blog ? data.blog : "Not Available";
+  userCompany.textContent = data.company ? data.company : "Not Available";
+});
