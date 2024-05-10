@@ -22,10 +22,18 @@ const dummyBioText =
 searchButton.addEventListener("click", async (e) => {
   e.preventDefault();
   let data = await populateHTML(getUserFromAPI(userSearchInput.value));
+  // Date checks
+  let newDate = new Date(data.created_at);
+  console.log();
+  //
   userLogin.textContent = `@${data.login}`;
   userName.textContent = data.name;
   userAvatar.src = data.avatar_url;
-  userCreatedAt.textContent = `Joined ${data.created_at}`;
+  userCreatedAt.textContent = `Joined ${newDate
+    .toDateString()
+    .split(" ")
+    .slice(1)
+    .join(" ")}`;
   userBio.textContent = data.bio ? data.bio : dummyBioText;
   userRepos.textContent = data.public_repos;
   userFollowers.textContent = data.followers;
@@ -55,10 +63,15 @@ function populateHTML(data) {
 }
 
 getUserFromAPI("octocat").then((data) => {
+  let newDate = new Date(data.created_at);
   userLogin.textContent = `@${data.login}`;
   userName.textContent = data.name;
   userAvatar.src = data.avatar_url;
-  userCreatedAt.textContent = `Joined ${data.created_at}`;
+  userCreatedAt.textContent = `Joined ${newDate
+    .toDateString()
+    .split(" ")
+    .slice(1)
+    .join(" ")}`;
   userBio.textContent = data.bio ? data.bio : dummyBioText;
   userRepos.textContent = data.public_repos;
   userFollowers.textContent = data.followers;
